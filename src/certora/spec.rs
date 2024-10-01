@@ -1,4 +1,5 @@
 use cvt::CVT_assume;
+use nondet::*;
 use soroban_sdk::{Address, Env};
 
 use crate::Token;
@@ -40,4 +41,15 @@ fn sunbeam_transfer_fails_if_low_balance(e: Env, to: Address, from: Address, amo
     );
     Token::transfer(&e, from.clone(), to.clone(), amount);
     cvt::assert!(false); // should not reach and therefore rule must pass
+}
+
+
+#[no_mangle]
+#[inline(never)]
+fn sunbeam_transfer_no_effect_on_other(e: Env, amount: i64, from: Address, to: Address, other: Address) {
+    CVT_assume(to != other && from != other);
+    let balance_other_before = Token::balance(&e, other.clone());
+    Token::transfer(&e, from.clone(), to.clone(), amount);
+    let balance_other_after = Token::balance(&e, other.clone());
+    cvt::assert!(balance_other_after == balance_other_before);
 }

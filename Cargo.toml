@@ -10,13 +10,13 @@ crate-type = ["cdylib"]
 doctest = false
 
 [dependencies]
-soroban-sdk = { version = "20.3.1" }
-nondet = {git = "https://github.com/Certora/solana-cvt.git", branch="abakst/dev-soroban", default-features=false, features=["soroban"]}
-cvt = {git = "https://github.com/Certora/solana-cvt.git", branch="abakst/dev-soroban"}
+soroban-sdk = { version = "21.6.0" }
+nondet = {git = "https://github.com/Certora/solana-cvt.git", branch="dev-soroban", default-features=false, features=["soroban"]}
+cvt = {git = "https://github.com/Certora/solana-cvt.git", branch="dev-soroban"}
 
 
 [dev-dependencies]
-soroban-sdk = { version = "20.3.1", features = ["testutils"] }
+soroban-sdk = { version = "21.6.0", features = ["testutils"] }
 
 [profile.release]
 opt-level = "z"

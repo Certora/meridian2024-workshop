@@ -9,7 +9,7 @@ fn check_nonnegative_amount(amount: i64) {
     }
 }
 
-pub fn read_balance(e: &Env, addr: Address) -> i64 {
+pub fn read_balance(e: &Env, addr: &Address) -> i64 {
     e.storage().persistent().get(&addr).unwrap_or(0)
 }
 
@@ -18,12 +18,12 @@ fn write_balance(e: &Env, addr: Address, amount: i64) {
 }
 
 pub fn receive_balance(e: &Env, addr: Address, amount: i64) {
-    let balance = read_balance(e, addr.clone());
+    let balance = read_balance(e, &addr);
     write_balance(e, addr, balance + amount);
 }
 
 pub fn spend_balance(e: &Env, addr: Address, amount: i64) {
-    let balance = read_balance(e, addr.clone());
+    let balance = read_balance(e, &addr);
     if balance < amount {
         panic!("insufficient balance");
     }
@@ -64,6 +64,6 @@ impl Token {
     }
 
     pub fn balance(env: &Env, addr: Address) -> i64 {
-        read_balance(env, addr)
+        read_balance(env, &addr)
     }
 }
