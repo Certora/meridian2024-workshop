@@ -1,2 +1,8 @@
 target/
 Cargo.lock
+.venv
+*.txt
+.certora_internal
+emv-*
+*.wat
+*.wasm
