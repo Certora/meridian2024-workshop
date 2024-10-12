@@ -118,24 +118,23 @@ certoraRun confs/exercise3.conf
 
 You can see the solution in `solutions/solution_specs.rs`.
 
-#### Exercise 4. Assessing your specs through mutation testing
-
-How do you know if your rules are good enough to catch potential bugs? One technique is called "mutation testing" where small faults are injected in to the program and it is checked against the same rule. Verification should fail if the rule is good at catching the fault. If verification passes, that means your rule has gaps that must be addressed.
-
-We have provided 3 hand-written mutants in `src/certora/mutants`. Copy them one at a time to `src` and rename them to `lib.rs` to replace the original `src/lib.rs`. Then run the rules you wrote above on these mutants. Are they caught?
-
-Can you detect what the mutation was, for each mutant? You can see the solution in `solutions/bugs-in-mutants.md`.
-
-
-
-Note that there are other ways to assess the quality of your rule. You can mutate the rule to see if it is vacuous, you can check if the rule is a tautology, and you can use UNSAT cores to understand what parts of the code were covered by the rule.
-
-#### Exercise 5. Specs for `mint` and `burn`
+#### Exercise 4. Specs for `mint` and `burn`
 
 Now that we have seen rules for `transfer`, think of some properties for `mint` and `burn` and write them in the `src/certora/spec.rs` file. To run them,
 create your own `conf` files under `confs` by looking at the existing conf files. You will only need to change the names of the rules passed into the `"rule"` field. The rest should be the same.
 
 You can see several rules we have written for these functions in `solutions/solution_specs.rs`.
+
+#### Exercise 5. Assessing your specs through mutation testing
+
+How do you know if your rules are good enough to catch potential bugs? One technique is called "mutation testing" where small faults are injected in to the program and it is checked against the same rule. Verification should fail if the rule is good at catching the fault. If verification passes, that means your rule has gaps that must be addressed.
+
+We have provided 3 hand-written mutants in `src/certora/mutants`. Copy them one at a time to `src` and rename them to `lib.rs` to replace the original `src/lib.rs`. Then run the rules you wrote above for `transfer` on these mutants. Are they caught?
+
+Can you detect what the mutation was, for each mutant? You can see the solution in `solutions/bugs-in-mutants.md`.
+
+
+Note that there are other ways to assess the quality of your rule. You can mutate the rule to see if it is vacuous, you can check if the rule is a tautology, and you can use UNSAT cores to understand what parts of the code were covered by the rule.
 
 
 # Troubleshooting
