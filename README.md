@@ -74,6 +74,8 @@ It will show you that a basic sanity check has passed. You can see the `Source F
 `src/certora/spec.rs` will show you the `sanity` rule we just ran. This rule simply calls `Token::balance()` and checks that the control reaches the `satisfy` statement that follows. You can read more about `satify` [here](https://docs.certora.com/en/latest/docs/cvl/statements.html#satisfy).
 
 
+If you are not able to run certoraRun, see the Troubleshooting section at the end of this document.
+
 #### Exercise 1. A property to check that the initial balance of an account.
 
 What should be the balance of a new address? Write a property to check that this is indeed the balance of a new address.
@@ -134,3 +136,26 @@ Now that we have seen rules for `transfer`, think of some properties for `mint` 
 create your own `conf` files under `confs` by looking at the existing conf files. You will only need to change the names of the rules passed into the `"rule"` field. The rest should be the same.
 
 You can see several rules we have written for these functions in `solutions/solution_specs.rs`.
+
+
+# Troubleshooting
+
+If you are unable to run `certoraRun`, we recommend trying it from within a `venv`.
+
+1. First, create a `venv` and make sure you are inside the `venv` by running the following:
+
+```
+cd meridian2024-workshop
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+2. Then, install all required packages like so:
+```
+pip3 install -r requirements.txt
+``` 
+
+3. Finally, try running certoraRun again
+```
+certoraRun confs/setup.conf
+```
