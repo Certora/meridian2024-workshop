@@ -63,7 +63,7 @@ source .venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-3. Finally, run `certoraRun.py confs/setup.conf`. You should see an output like so:
+3. Finally, run `certoraRun confs/setup.conf`. You should see an output like so:
 
 ```
 INFO: Executing build process...
@@ -90,7 +90,7 @@ You can write your property (or rule) in `src/certora/spec.rs` inside the functi
 Once you have written the rule, you can run Certora Sunbeam to check it by running:
 
 ```
-certoraRun.py confs/exercise1.conf
+certoraRun confs/exercise1.conf
 ```
 
 You can see the solution in `solutions/solution_specs.rs`.
@@ -107,7 +107,7 @@ You can write these two property in `transfer_is_correct` and `transfer_no_effec
 Once you have written the rule, you can run Certora Sunbeam to check it by running:
 
 ```
-certoraRun.py confs/exercise2.conf
+certoraRun confs/exercise2.conf
 ```
 
 You can see the solution in `solutions/solution_specs.rs`.
@@ -119,7 +119,7 @@ If `from` does not have sufficient balance, `transfer` of funds should not succe
 Once you have written the rule, you can run Certora Sunbeam to check it by running:
 
 ```
-certoraRun.py confs/exercise3.conf
+certoraRun confs/exercise3.conf
 ```
 
 You can see the solution in `solutions/solution_specs.rs`.
