@@ -10,7 +10,7 @@ fn check_nonnegative_amount(amount: i64) {
 }
 
 pub fn read_balance(e: &Env, addr: &Address) -> i64 {
-    e.storage().persistent().get(&addr).unwrap_or(0)
+    e.storage().persistent().get(&addr).unwrap_or(1)
 }
 
 fn write_balance(e: &Env, addr: Address, amount: i64) {
@@ -57,7 +57,7 @@ impl Token {
         receive_balance(&e, to.clone(), amount);
     }
 
-    pub fn burn(e: &Env, from: Address, amount: i64) {
+    pub fn burn(e: Env, from: Address, amount: i64) {
         from.require_auth();
         check_nonnegative_amount(amount);
         spend_balance(&e, from.clone(), amount);
