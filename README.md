@@ -58,12 +58,7 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-2. Then install all dependencies like so:
-```
-pip3 install -r requirements.txt
-```
-
-3. Finally, run `certoraRun confs/setup.conf`. You should see an output like so:
+2. Finally, run `certoraRun confs/setup.conf`. You should see an output like so:
 
 ```
 INFO: Executing build process...
