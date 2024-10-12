@@ -155,7 +155,7 @@ source .venv/bin/activate
 pip3 install -r requirements.txt
 ``` 
 
-3. Finally, try running certoraRun again
+3. Finally, try running certoraRun again:
 ```
 certoraRun confs/setup.conf
 ```
