@@ -49,16 +49,13 @@ First, let's understand the what is in this Rust project directory.
 
 #### Exercise 0: Warm up
 
-Let's make sure you are able to run Certora Sunbeam.
-
-1. We recommend making a python virtual environment first like so:
+Let's make sure you are able to run Certora Sunbeam. Run the following:
 
 ```
-python -m venv .venv
-source .venv/bin/activate
+cd meridian2024-workshop
+certoraRun confs/setup.conf
 ```
-
-2. Finally, run `certoraRun confs/setup.conf`. You should see an output like so:
+You should see an output like so:
 
 ```
 INFO: Executing build process...
