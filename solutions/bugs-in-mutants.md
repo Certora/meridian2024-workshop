@@ -23,3 +23,12 @@ pub fn transfer(e: &Env, from: Address, to: Address, amount: i64) {
 ## Mutant 3.
 The bug is that `transfer` calls `spend_balance(&e, from.clone(), amount + 1);`
 instead of `spend_balance(&e, from.clone(), amount);`.
+
+```
+pub fn transfer(e: &Env, from: Address, to: Address, amount: i64) {
+    from.require_auth();
+    check_nonnegative_amount(amount);
+    spend_balance(&e, from.clone(), amount + 1);
+    receive_balance(&e, to.clone(), amount);
+}
+```
