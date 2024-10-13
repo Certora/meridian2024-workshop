@@ -9,21 +9,27 @@ use cvt_soroban::{cvt_cex_print_i64, CVT_calltrace_print_c_i64};
 
 // Sunbeam specs
 
+// Exercise 0
 #[rule]
 fn sanity(e: Env, addr: Address) {
     let balance = Token::balance(&e, addr);
     cvt::satisfy!(true);
 }
 
+// Exercise 1
 #[rule]
 fn init_balance(e: Env, addr: Address) {
-    require!(!e.storage().persistent().has(&addr), "address must not exists");
+    // precondition macro
+    cvt::require!(!e.storage().persistent().has(&addr), "address must not exists");
     let balance = Token::balance(&e, addr);
-    cvt_cex_print_i64!(balance);
+    // use this macro to see additional information in the calltrace
+    cvt_cex_print_i64!(balance); 
+    // postcondition macro
     cvt::assert!(balance == 0);
 }
 
 
+// Exercise 2
 #[rule]
 fn transfer_is_correct(e: Env, to: Address, from: Address, amount: i64) {
     require!(
@@ -41,6 +47,7 @@ fn transfer_is_correct(e: Env, to: Address, from: Address, amount: i64) {
     );
 }
 
+// Exercise 2
 #[rule]
 fn transfer_no_effect_on_other(e: Env, amount: i64, from: Address, to: Address, other: Address) {
     require!(to != other && from != other, "addresses are all different");
@@ -50,7 +57,7 @@ fn transfer_no_effect_on_other(e: Env, amount: i64, from: Address, to: Address, 
     cvt::assert!(balance_other_after == balance_other_before);
 }
 
-
+// Exercise 3
 #[rule]
 fn transfer_fails_if_low_balance(e: Env, to: Address, from: Address, amount: i64) {
     require!(
@@ -61,10 +68,11 @@ fn transfer_fails_if_low_balance(e: Env, to: Address, from: Address, amount: i64
         "addresses exist and different, and balance < amount"
     );
     Token::transfer(&e, from.clone(), to.clone(), amount);
-    cvt::assert!(false); // should not reach and therefore rule must pass
+    // should not reach and therefore rule must pass
+    cvt::assert!(false);
 }
 
-
+// Exercise 4
 #[rule]
 fn burn_is_correct(e: Env, from: Address, amount: i64) {
     let balance_before = Token::balance(&e, from.clone());
@@ -73,6 +81,7 @@ fn burn_is_correct(e: Env, from: Address, amount: i64) {
     cvt::assert!(balance_after == balance_before - amount);
 }
 
+// Exercise 4
 #[rule]
 fn mint_is_authorized(e: Env, to: Address, amount: i64) {
     let admin = e
@@ -85,6 +94,7 @@ fn mint_is_authorized(e: Env, to: Address, amount: i64) {
     cvt::satisfy!(true);
 }
 
+// Exercise 4
 #[rule]
 fn mint_not_authorized_fails(e: Env, to: Address, amount: i64) {
     let admin = e
@@ -97,6 +107,7 @@ fn mint_not_authorized_fails(e: Env, to: Address, amount: i64) {
     cvt::assert!(false); // should pass
 }
 
+// Exercise 4
 #[rule]
 fn mint_is_correct(e: Env, to: Address, amount: i64) {
     let balance_before = Token::balance(&e, to.clone());
