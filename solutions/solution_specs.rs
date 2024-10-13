@@ -13,6 +13,7 @@ use cvt_soroban::{cvt_cex_print_i64, CVT_calltrace_print_c_i64};
 #[rule]
 fn sanity(e: Env, addr: Address) {
     let balance = Token::balance(&e, addr);
+    // Reachability check: is this satisfy reachable?
     cvt::satisfy!(true);
 }
 
