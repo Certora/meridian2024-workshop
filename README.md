@@ -14,13 +14,13 @@ Welcome to the Meridian Certora workshop! In the next hour, we will introduce yo
 
 5. Then, install the Certora Prover: `pip3 install certora-cli-beta`.
 
-6. Recall that you received a `Certora Key` in your email (Step 2). Use the key set an environment variable like so `export CERTORAKEY=<personal_access_key>`.
+6. Recall that you received a `Certora Key` in your email (Step 2). Use the key to set a temporary environment variable like so `export CERTORAKEY=<personal_access_key>` or store the key in your bash profile.
 See [here](https://docs.certora.com/en/latest/docs/user-guide/install.html#step-3-set-the-personal-access-key-as-an-environment-variable) for more.
 
 
 # Rust and Soroban Setup
 
-1. We recommend installing Rust like so: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+1. We recommend installing Rust as on the [official website](https://www.rust-lang.org/tools/install): `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
 2. Next, install the WASM target like so: `rustup target add wasm32-unknown-unknown`
 
@@ -86,6 +86,11 @@ Once you have written the rule, you can run Certora Sunbeam to check it by runni
 ```
 certoraRun confs/exercise1.conf
 ```
+
+<details>
+  <summary>Hint</summary>
+  You'll need to use `require!(<CONDITION>, "expect address to exist");` to ensure the `address` actual exists.  
+</details>
 
 You can see the solution in `solutions/solution_specs.rs`.
 
