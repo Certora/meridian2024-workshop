@@ -14,8 +14,7 @@ Welcome to the Meridian Certora workshop! In the next hour, we will introduce yo
 
 5. Then, install the Certora Prover: `pip3 install certora-cli-beta`.
 
-6. Recall that you received a `Certora Key` in your email (Step 2). Use the key to set a temporary environment variable like so `export CERTORAKEY=<personal_access_key>` or store the key in your bash profile.
-See [here](https://docs.certora.com/en/latest/docs/user-guide/install.html#step-3-set-the-personal-access-key-as-an-environment-variable) for more.
+6. Recall that you received a `Certora Key` in your email (Step 2). Use the key to set a temporary environment variable like so `export CERTORAKEY=<personal_access_key>`. Alternative, store the key in your profile see [here](https://docs.certora.com/en/latest/docs/user-guide/install.html#step-3-set-the-personal-access-key-as-an-environment-variable).
 
 
 # Rust and Soroban Setup
