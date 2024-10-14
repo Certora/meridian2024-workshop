@@ -87,6 +87,11 @@ Once you have written the rule, you can run Certora Sunbeam to check it by runni
 certoraRun confs/exercise1.conf
 ```
 
+<details>
+  <summary>Hint</summary>
+  You'll need to use `require!(<CONDITION>, "expect address to exist");` to ensure the `address` actual exists.  
+</details>
+
 You can see the solution in `solutions/solution_specs.rs`.
 
 
