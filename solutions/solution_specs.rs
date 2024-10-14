@@ -5,7 +5,7 @@ use soroban_sdk::{Address, Env};
 
 use crate::Token;
 use cvt::*;
-use cvt_soroban::{cvt_cex_print_i64, CVT_calltrace_print_c_i64};
+use cvt_soroban::{cvt_cex_print_i64, CVT_calltrace_print_c_i64, is_auth};
 
 // Sunbeam specs
 
