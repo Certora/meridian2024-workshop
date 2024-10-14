@@ -17,13 +17,13 @@ Welcome to the Meridian Certora workshop! In the next hour, we will introduce yo
 6. Recall that you received a `Certora Key` in your email (Step 2). Use the key to set a temporary environment variable like so `export CERTORAKEY=<personal_access_key>`. Alternative, store the key in your profile see [here](https://docs.certora.com/en/latest/docs/user-guide/install.html#step-3-set-the-personal-access-key-as-an-environment-variable).
 
 
-# Rust and Soroban Setup
+# Rust and Stellar CLI Setup
 
 1. We recommend installing Rust as on the [official website](https://www.rust-lang.org/tools/install): `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
 2. Next, install the WASM target like so: `rustup target add wasm32-unknown-unknown`
 
-3. We recommend setting up the Soroban environment as shown [here](https://soroban.stellar.org/docs/getting-started/setup#install-the-soroban-cli).
+3. We recommend setting up the Stellar CLI as shown [here](https://soroban.stellar.org/docs/getting-started/setup#install-the-soroban-cli).
 
 4. We also recommend installing the [wabt](https://github.com/WebAssembly/wabt) toolkit. `wasm2wat` is a useful tool for converting the WASM bytecode to a human readable format.
 
