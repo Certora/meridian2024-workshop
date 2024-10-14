@@ -143,6 +143,8 @@ Note that there are other ways to assess the quality of your rule. You can mutat
 
 # Troubleshooting
 
+
+## Unable to run certoraRun
 If you are unable to run `certoraRun`, we recommend trying it from within a `venv`.
 
 1. First, create a `venv` and make sure you are inside the `venv` by running the following:
@@ -162,3 +164,13 @@ pip3 install -r requirements.txt
 ```
 certoraRun confs/setup.conf
 ```
+
+## Build step of certoraRun is failing
+
+When you execute `certoraRun`, the project is internally build using `cargo build`. This step
+requires a successful build. In case `certoraRun` fails on the build step, resolve all
+compiler errors that you'll see when invoking `cargo build` on your project. 
+
+## Compiler Error: "error: linking with \`cc\` failed: exit status: 1" on Mac
+If you are running on Mac and the build step of your project /  `certoraRun` fails with the warning
+`"error: linking with \`cc\` failed: exit status: 1"` check out the following [StackOverflow post](https://stackoverflow.com/questions/28124221/error-linking-with-cc-failed-exit-code-1).
