@@ -169,8 +169,11 @@ certoraRun confs/setup.conf
 
 When you execute `certoraRun`, the project is internally build using `cargo build`. This step
 requires a successful build. In case `certoraRun` fails on the build step, resolve all
-compiler errors that you'll see when invoking `cargo build` on your project. 
+compiler errors that you'll see when invoking `cargo build --release --target wasm32-unknown-unknown` on your project. 
 
 ## Compiler Error: "error: linking with \`cc\` failed: exit status: 1" on Mac
-If you are running on Mac and the build step of your project /  `certoraRun` fails with the warning
-`"error: linking with \`cc\` failed: exit status: 1"` check out the following [StackOverflow post](https://stackoverflow.com/questions/28124221/error-linking-with-cc-failed-exit-code-1).
+If you are running on Mac and the build step of your project or `certoraRun` fails with the warning
+```
+"error: linking with \`cc\` failed: exit status: 1"
+```
+ then check out the following [StackOverflow post](https://stackoverflow.com/questions/28124221/error-linking-with-cc-failed-exit-code-1).
