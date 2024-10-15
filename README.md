@@ -25,7 +25,7 @@ Welcome to the Meridian Certora workshop! In the next hour, we will introduce yo
 
 3. We recommend setting up the Stellar CLI as shown [here](https://soroban.stellar.org/docs/getting-started/setup#install-the-soroban-cli).
 
-4. We also recommend installing the [wabt](https://github.com/WebAssembly/wabt) toolkit. `wasm2wat` is a useful tool for converting the WASM bytecode to a human readable format.
+4. We also recommend installing the [wabt](https://github.com/WebAssembly/wabt) toolkit. `wasm2wat` is a useful tool for converting the WASM bytecode to a human readable format. Ensure that `wasm2wat` is executable as command from your terminal. You will have to add `wabt/bin` to your `PATH` by running `export PATH=~/path/to/wabt/bin:$PATH`. 
 
 5. Finally, install `rustfilt` like so: `cargo install rustfilt`.
 
