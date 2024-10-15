@@ -27,7 +27,9 @@ Welcome to the Meridian Certora workshop! In the next hour, we will introduce yo
 
 4. We also recommend installing the [wabt](https://github.com/WebAssembly/wabt) toolkit. `wasm2wat` is a useful tool for converting the WASM bytecode to a human readable format.
 
-5. Finally, install `rustfilt` like so: `cargo install rustfilt`.
+5. You will have to add `wabt/bin` to your path like so: export `PATH=~/path/to/wabt/bin:$PATH`
+
+6. Finally, install `rustfilt` like so: `cargo install rustfilt`.
 
 With that, you should be all set for using Certora Sunbeam. Congratulations!
 
