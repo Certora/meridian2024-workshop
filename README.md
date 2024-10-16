@@ -86,7 +86,7 @@ certoraRun confs/exercise1.conf
 
 <details>
   <summary>Hint</summary>
-  You'll need to use `require!(CONDITION, "expect address to exist");` to ensure the `address` actual exists.  
+  You'll need to use `require!(CONDITION, "address must not exists"");` to ensure the `address` does not already exist.  
 </details>
 
 
@@ -134,7 +134,7 @@ Note that there are other ways to assess the quality of your rule. You can mutat
 
 ### Solutions
 
-This repository has a branch `solutions` in this branch, in the file `solutions/solution_specs.rs` you'll find the solutions to all exercises of this repository. You can consult it if you want to know the answers.
+This repository has a branch `solutions`. On this branch, in file `solutions/solution_specs.rs` you'll find the solutions to all exercises of this repository. You can consult it if you want to know the answers.
 
 # Troubleshooting
 
