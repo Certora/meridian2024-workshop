@@ -57,7 +57,7 @@ impl Token {
         receive_balance(&e, to.clone(), amount);
     }
 
-    pub fn burn(e: Env, from: Address, amount: i64) {
+    pub fn burn(e: &Env, from: Address, amount: i64) {
         from.require_auth();
         check_nonnegative_amount(amount);
         spend_balance(&e, from.clone(), amount);

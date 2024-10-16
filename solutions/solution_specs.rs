@@ -24,7 +24,7 @@ fn init_balance(e: Env, addr: Address) {
     cvt::require!(!e.storage().persistent().has(&addr), "address must not exists");
     let balance = Token::balance(&e, addr);
     // use this macro to see additional information in the calltrace
-    cvt_cex_print_i64!(balance); 
+    cvt_cex_print_i64!("value of balance is:", balance); 
     // postcondition macro
     cvt::assert!(balance == 0);
 }

@@ -84,11 +84,14 @@ Once you have written the rule, you can run Certora Sunbeam to check it by runni
 certoraRun confs/exercise1.conf
 ```
 
+[Link to job with the solution of Exercise 0](https://prover.certora.com/output/6045441/82c9d2f5383645628550f8a1499fb047?anonymousKey=acee90f0eb02781d8a73e82165087b3166de39a1) 
+
 <details>
   <summary>Hint</summary>
   You'll need to use `require!(CONDITION, "address must not exists"");` to ensure the `address` does not already exist.  
 </details>
 
+[Link to job with the solution of Exercise 1](https://prover.certora.com/output/10284447/cd19f5d3491f4e93af845bbd424db947?anonymousKey=9ba60690a32ea79e2a1ad288a13b207b656f6ad6) 
 
 #### Exercise 2. Effect of transfer on the balances of various addresses
 
@@ -104,6 +107,8 @@ Once you have written the rule, you can run Certora Sunbeam to check it by runni
 certoraRun confs/exercise2.conf
 ```
 
+[Link to job with the solution of Exercise 2](https://prover.certora.com/output/10284447/9c9901e8ec9d4d7c8bce271aa012ab18?anonymousKey=58725e61d17556dca1bdbd2cb3f3caadaf3b963a)
+
 #### Exercise 3. `transfer` under insufficient funds
 
 If `from` does not have sufficient balance, `transfer` of funds should not succeed. Write a rule to capture this behavior in the function `transfer_fails_if_low_balance`
@@ -114,12 +119,18 @@ Once you have written the rule, you can run Certora Sunbeam to check it by runni
 certoraRun confs/exercise3.conf
 ```
 
+[Link to job with the solution of Exercise 3](https://prover.certora.com/output/10284447/ce9607a5d50c4ce58ed1b69fb2462383?anonymousKey=a4cc8afc33356449d3b55f5716d1bc3017a28748)
+
+
 #### Exercise 4. Specs for `mint` and `burn`
 
 Now that we have seen rules for `transfer`, think of some properties for `mint` and `burn` and write them in the `src/certora/spec.rs` file. To run them,
 create your own `conf` files under `confs` by looking at the existing conf files. You will only need to change the names of the rules passed into the `"rule"` field. The rest should be the same.
 
 You can see several rules we have written for these functions in `solutions/solution_specs.rs` of branch `solutions`.
+
+
+[Link to job with the solution of Exercise 4](https://prover.certora.com/output/10284447/1df3a13fb10248baa45b71513aa3007a?anonymousKey=2ad7ddbbe040536b7464e57ae38ca174ef0ddc3f)
 
 #### Exercise 5. Assessing your specs through mutation testing
 
@@ -131,6 +142,10 @@ Can you detect what the mutation was, for each mutant? You can see the solution 
 
 
 Note that there are other ways to assess the quality of your rule. You can mutate the rule to see if it is vacuous, you can check if the rule is a tautology, and you can use UNSAT cores to understand what parts of the code were covered by the rule.
+
+[Link to job with the solution of Exercise 4 against mutant1.rs](https://prover.certora.com/output/10284447/b68514b6a13345dc9855ece5ad54047e?anonymousKey=ad6b9432374822c1b85c88d0ee1b30d99860115f)
+[Link to job with the solution of Exercise 4 against mutant2.rs](https://prover.certora.com/output/10284447/2d081abab714469b93e70e0501401db6?anonymousKey=c1111a4a3f3b9f77c6bef3a123f40caa765d9457)
+[Link to job with the solution of Exercise 4 against mutant2.rs](https://prover.certora.com/output/10284447/6b63932caaf347e685c1b858cbffc787?anonymousKey=bfc0a300f8faff457a3637034d85d4c3c1a8a45b)
 
 ### Solutions
 
