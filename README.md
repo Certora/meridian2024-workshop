@@ -43,8 +43,6 @@ First, let's understand the what is in this Rust project directory.
 
 - `src/certora/` is where we will write the formal specs for this contract. It also has a directory of `mutants` to evaluate the specs.
 
-- `solutions/` has solutions to some of the exercises we will do in this workshop. You can consult it if you want to know the answers.
-
 
 #### Exercise 0: Warm up
 
@@ -91,8 +89,6 @@ certoraRun confs/exercise1.conf
   You'll need to use `require!(<CONDITION>, "expect address to exist");` to ensure the `address` actual exists.  
 </details>
 
-You can see the solution in `solutions/solution_specs.rs`.
-
 
 #### Exercise 2. Effect of transfer on the balances of various addresses
 
@@ -108,8 +104,6 @@ Once you have written the rule, you can run Certora Sunbeam to check it by runni
 certoraRun confs/exercise2.conf
 ```
 
-You can see the solution in `solutions/solution_specs.rs`.
-
 #### Exercise 3. `transfer` under insufficient funds
 
 If `from` does not have sufficient balance, `transfer` of funds should not succeed. Write a rule to capture this behavior in the function `transfer_fails_if_low_balance`
@@ -120,14 +114,12 @@ Once you have written the rule, you can run Certora Sunbeam to check it by runni
 certoraRun confs/exercise3.conf
 ```
 
-You can see the solution in `solutions/solution_specs.rs`.
-
 #### Exercise 4. Specs for `mint` and `burn`
 
 Now that we have seen rules for `transfer`, think of some properties for `mint` and `burn` and write them in the `src/certora/spec.rs` file. To run them,
 create your own `conf` files under `confs` by looking at the existing conf files. You will only need to change the names of the rules passed into the `"rule"` field. The rest should be the same.
 
-You can see several rules we have written for these functions in `solutions/solution_specs.rs`.
+You can see several rules we have written for these functions in `solutions/solution_specs.rs` of branch `solutions`.
 
 #### Exercise 5. Assessing your specs through mutation testing
 
@@ -140,6 +132,9 @@ Can you detect what the mutation was, for each mutant? You can see the solution 
 
 Note that there are other ways to assess the quality of your rule. You can mutate the rule to see if it is vacuous, you can check if the rule is a tautology, and you can use UNSAT cores to understand what parts of the code were covered by the rule.
 
+### Solutions
+
+This repository has a branch `solutions` in this branch, in the file `solutions/solution_specs.rs` you'll find the solutions to all exercises of this repository. You can consult it if you want to know the answers.
 
 # Troubleshooting
 
