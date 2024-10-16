@@ -73,6 +73,9 @@ It will show you that a basic sanity check has passed. You can see the `Source F
 
 If you are not able to run certoraRun, see the Troubleshooting section at the end of this document.
 
+[Link to job of Exercise 0](https://prover.certora.com/output/6045441/82c9d2f5383645628550f8a1499fb047?anonymousKey=acee90f0eb02781d8a73e82165087b3166de39a1) 
+
+
 #### Exercise 1. A property to check the initial balance of a new account.
 
 What should be the balance of a new address? Write a property to check that this is indeed the balance of a new address.
@@ -84,11 +87,9 @@ Once you have written the rule, you can run Certora Sunbeam to check it by runni
 certoraRun confs/exercise1.conf
 ```
 
-[Link to job with the solution of Exercise 0](https://prover.certora.com/output/6045441/82c9d2f5383645628550f8a1499fb047?anonymousKey=acee90f0eb02781d8a73e82165087b3166de39a1) 
-
 <details>
   <summary>Hint</summary>
-  You'll need to use `require!(CONDITION, "address must not exists"");` to ensure the `address` does not already exist.  
+  You'll need to use `require!(CONDITION, "address must not exists");` to ensure the `address` does not already exist.  
 </details>
 
 [Link to job with the solution of Exercise 1](https://prover.certora.com/output/10284447/cd19f5d3491f4e93af845bbd424db947?anonymousKey=9ba60690a32ea79e2a1ad288a13b207b656f6ad6) 
