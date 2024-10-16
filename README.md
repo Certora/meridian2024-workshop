@@ -73,7 +73,7 @@ It will show you that a basic sanity check has passed. You can see the `Source F
 
 If you are not able to run certoraRun, see the Troubleshooting section at the end of this document.
 
-#### Exercise 1. A property to check that the initial balance of an account.
+#### Exercise 1. A property to check the initial balance of a new account.
 
 What should be the balance of a new address? Write a property to check that this is indeed the balance of a new address.
 You can write your property (or rule) in `src/certora/spec.rs` inside the function `init_balance`. We have already provided the right signature for this rule.
@@ -86,7 +86,7 @@ certoraRun confs/exercise1.conf
 
 <details>
   <summary>Hint</summary>
-  You'll need to use `require!(<CONDITION>, "expect address to exist");` to ensure the `address` actual exists.  
+  You'll need to use `require!(CONDITION, "expect address to exist");` to ensure the `address` actual exists.  
 </details>
 
 
