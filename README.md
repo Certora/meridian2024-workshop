@@ -144,9 +144,9 @@ Can you detect what the mutation was, for each mutant? You can see the solution 
 
 Note that there are other ways to assess the quality of your rule. You can mutate the rule to see if it is vacuous, you can check if the rule is a tautology, and you can use UNSAT cores to understand what parts of the code were covered by the rule.
 
-[Link to job with the solution of Exercise 4 against mutant1.rs](https://prover.certora.com/output/10284447/b68514b6a13345dc9855ece5ad54047e?anonymousKey=ad6b9432374822c1b85c88d0ee1b30d99860115f)
-[Link to job with the solution of Exercise 4 against mutant2.rs](https://prover.certora.com/output/10284447/2d081abab714469b93e70e0501401db6?anonymousKey=c1111a4a3f3b9f77c6bef3a123f40caa765d9457)
-[Link to job with the solution of Exercise 4 against mutant2.rs](https://prover.certora.com/output/10284447/6b63932caaf347e685c1b858cbffc787?anonymousKey=bfc0a300f8faff457a3637034d85d4c3c1a8a45b)
+* [Link to job with the solution of Exercise 4 against mutant1.rs](https://prover.certora.com/output/10284447/*b68514b6a13345dc9855ece5ad54047e?anonymousKey=ad6b9432374822c1b85c88d0ee1b30d99860115f)
+* [Link to job with the solution of Exercise 4 against mutant2.rs](https://prover.certora.com/output/10284447/2d081abab714469b93e70e0501401db6?anonymousKey=c1111a4a3f3b9f77c6bef3a123f40caa765d9457)
+* [Link to job with the solution of Exercise 4 against mutant2.rs](https://prover.certora.com/output/10284447/6b63932caaf347e685c1b858cbffc787?anonymousKey=bfc0a300f8faff457a3637034d85d4c3c1a8a45b)
 
 ### Solutions
 
