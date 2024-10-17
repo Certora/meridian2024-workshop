@@ -86,7 +86,7 @@ certoraRun confs/exercise1.conf
 
 <details>
   <summary>Hint</summary>
-  You'll need to use `require!(CONDITION, "address must not exists"");` to ensure the `address` does not already exist.  
+  You'll need to use `require!(CONDITION, "address must not exists");` to ensure the `address` does not already exist.  
 </details>
 
 
