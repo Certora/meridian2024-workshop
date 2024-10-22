@@ -6,3 +6,14 @@ Cargo.lock
 emv-*
 *.wat
 *.wasm
+
+
+# Sphinx documentation
+# --------------------
+docs/build/
+
+
+# vim
+# ---
+.*.swp
+.*.swo
