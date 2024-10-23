@@ -16,6 +16,7 @@ If you are unable to run ``certoraRun``, we recommend trying it from within a ``
       source .venv/bin/activate
 
 #. Then, install all required packages like so:
+
    .. code-block:: bash
 
       pip3 install -r requirements.txt
