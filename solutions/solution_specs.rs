@@ -1,11 +1,11 @@
 #![no_std]
 
-use cvt_soroban_macros::{declare_rules, rule};
+use certora_soroban_macros::{declare_rules, rule};
 use soroban_sdk::{Address, Env};
 
 use crate::Token;
-use cvt::*;
-use cvt_soroban::{cvt_cex_print_i64, CVT_calltrace_print_c_i64, is_auth};
+use certora::*;
+use certora_soroban::{certora_print_i64, CERTORA_calltrace_print_c_i64, is_auth};
 
 // Sunbeam specs
 
@@ -14,19 +14,19 @@ use cvt_soroban::{cvt_cex_print_i64, CVT_calltrace_print_c_i64, is_auth};
 fn sanity(e: Env, addr: Address) {
     let balance = Token::balance(&e, addr);
     // Reachability check: is this satisfy reachable?
-    cvt::satisfy!(true);
+    certora::satisfy!(true);
 }
 
 // Exercise 1
 #[rule]
 fn init_balance(e: Env, addr: Address) {
     // precondition macro
-    cvt::require!(!e.storage().persistent().has(&addr), "address must not exists");
+    certora::require!(!e.storage().persistent().has(&addr), "address must not exists");
     let balance = Token::balance(&e, addr);
     // use this macro to see additional information in the calltrace
-    cvt_cex_print_i64!("value of balance is:", balance); 
+    certora_print_i64!("value of balance is:", balance); 
     // postcondition macro
-    cvt::assert!(balance == 0);
+    certora::assert!(balance == 0);
 }
 
 
@@ -42,7 +42,7 @@ fn transfer_is_correct(e: Env, to: Address, from: Address, amount: i64) {
     Token::transfer(&e, from.clone(), to.clone(), amount);
     let balance_from_after = Token::balance(&e, from.clone());
     let balance_to_after = Token::balance(&e, to.clone());
-    cvt::assert!(
+    certora::assert!(
         (balance_to_after == balance_to_before + amount)
             && (balance_from_after == balance_from_before - amount)
     );
@@ -55,7 +55,7 @@ fn transfer_no_effect_on_other(e: Env, amount: i64, from: Address, to: Address, 
     let balance_other_before = Token::balance(&e, other.clone());
     Token::transfer(&e, from.clone(), to.clone(), amount);
     let balance_other_after = Token::balance(&e, other.clone());
-    cvt::assert!(balance_other_after == balance_other_before);
+    certora::assert!(balance_other_after == balance_other_before);
 }
 
 // Exercise 3
@@ -70,7 +70,7 @@ fn transfer_fails_if_low_balance(e: Env, to: Address, from: Address, amount: i64
     );
     Token::transfer(&e, from.clone(), to.clone(), amount);
     // should not reach and therefore rule must pass
-    cvt::assert!(false);
+    certora::assert!(false);
 }
 
 // Exercise 4
@@ -79,7 +79,7 @@ fn burn_is_correct(e: Env, from: Address, amount: i64) {
     let balance_before = Token::balance(&e, from.clone());
     Token::burn(&e, from.clone(), amount);
     let balance_after = Token::balance(&e, from.clone());
-    cvt::assert!(balance_after == balance_before - amount);
+    certora::assert!(balance_after == balance_before - amount);
 }
 
 // Exercise 4
@@ -92,7 +92,7 @@ fn mint_is_authorized(e: Env, to: Address, amount: i64) {
             .unwrap();
     require!(is_auth(admin), "admin is authorized");
     Token::mint(&e, to, amount);
-    cvt::satisfy!(true);
+    certora::satisfy!(true);
 }
 
 // Exercise 4
@@ -105,7 +105,7 @@ fn mint_not_authorized_fails(e: Env, to: Address, amount: i64) {
             .unwrap();
     require!(!is_auth(admin), "admin is not authorized");
     Token::mint(&e, to, amount);
-    cvt::assert!(false); // should pass
+    certora::assert!(false); // should pass
 }
 
 // Exercise 4
@@ -114,5 +114,5 @@ fn mint_is_correct(e: Env, to: Address, amount: i64) {
     let balance_before = Token::balance(&e, to.clone());
     Token::mint(&e, to.clone(), amount);
     let balance_after = Token::balance(&e, to.clone());
-    cvt::assert!(balance_after == balance_before + amount);
+    certora::assert!(balance_after == balance_before + amount);
 }
