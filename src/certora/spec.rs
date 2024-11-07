@@ -4,8 +4,8 @@ use cvt_soroban_macros::{declare_rules, rule};
 use soroban_sdk::{Address, Env};
 
 use crate::Token;
-use cvt::*;
-use cvt_soroban::{cvt_cex_print_i64, CVT_calltrace_print_c_i64, is_auth};
+use certora::*;
+use certora_soroban::{certora_print_i64, CERTORA_calltrace_print_c_i64, is_auth};
 
 // Sunbeam specs
 

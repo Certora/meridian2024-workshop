@@ -12,12 +12,12 @@ crate-type = ["cdylib"]
 soroban-sdk = { version = "21.6.0" }
 
 nondet = {git = "https://github.com/Certora/solana-cvt.git", branch="dev-soroban", default-features=false, features=["soroban"]}
-cvt = {git = "https://github.com/Certora/solana-cvt.git", branch="dev-soroban", default-features=false, features=[]}
-cvt-soroban = {git = "https://github.com/Certora/solana-cvt.git", branch="dev-soroban", default-features=false}
-cvt-soroban-macros = {git = "https://github.com/Certora/solana-cvt.git", branch="dev-soroban", default-features=false}
+certora = {git = "https://github.com/Certora/solana-cvt.git", branch="dev-soroban", default-features=false, features=[]}
+certora-soroban = {git = "https://github.com/Certora/solana-cvt.git", branch="dev-soroban", default-features=false}
+certora-soroban-macros = {git = "https://github.com/Certora/solana-cvt.git", branch="dev-soroban", default-features=false}
 
 [features]
-cvt = []
+certora = []
 
 [dev-dependencies]
 soroban-sdk = { version = "21.6.0", features = ["testutils"] }
