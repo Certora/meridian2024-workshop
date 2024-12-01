@@ -56,7 +56,7 @@ You should see an output like so:
 
 ```
 INFO: Executing build process...
-Executing:  cargo build --target=wasm32-unknown-unknown --release  --features cvt
+Executing:  cargo build --target=wasm32-unknown-unknown --release  --features certora
 
 Connecting to server...
 
