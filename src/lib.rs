@@ -4,7 +4,7 @@ use soroban_sdk::*;
 mod certora;
 
 fn check_nonnegative_amount(amount: i64) {
-    if amount < 0 {
+    if amount == 0 {
         panic!("negative amount is not allowed: {}", amount)
     }
 }
