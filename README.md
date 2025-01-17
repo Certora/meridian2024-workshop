@@ -49,8 +49,8 @@ First, let's understand the what is in this Rust project directory.
 Let's make sure you are able to run Certora Sunbeam. Run the following:
 
 ```
-cd meridian2024-workshop
-certoraSorobanProver confs/setup.conf
+cd meridian2024-workshop/confs
+certoraSorobanProver setup.conf
 ```
 You should see an output like so:
 
@@ -81,7 +81,7 @@ You can write your property (or rule) in `src/certora/spec.rs` inside the functi
 Once you have written the rule, you can run Certora Sunbeam to check it by running:
 
 ```
-certoraSorobanProver confs/exercise1.conf
+certoraSorobanProver exercise1.conf
 ```
 
 <details>
@@ -101,7 +101,7 @@ You can write these two property in `transfer_is_correct` and `transfer_no_effec
 Once you have written the rule, you can run Certora Sunbeam to check it by running:
 
 ```
-certoraSorobanProver confs/exercise2.conf
+certoraSorobanProver exercise2.conf
 ```
 
 #### Exercise 3. `transfer` under insufficient funds
@@ -111,7 +111,7 @@ If `from` does not have sufficient balance, `transfer` of funds should not succe
 Once you have written the rule, you can run Certora Sunbeam to check it by running:
 
 ```
-certoraSorobanProver confs/exercise3.conf
+certoraSorobanProver exercise3.conf
 ```
 
 #### Exercise 4. Specs for `mint` and `burn`
@@ -157,7 +157,8 @@ pip3 install -r requirements.txt
 
 3. Finally, try running certoraSorobanProver again:
 ```
-certoraSorobanProver confs/setup.conf
+cd confs
+certoraSorobanProver setup.conf
 ```
 
 ## Build step of certoraSorobanProver is failing
