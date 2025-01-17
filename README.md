@@ -50,7 +50,7 @@ Let's make sure you are able to run Certora Sunbeam. Run the following:
 
 ```
 cd meridian2024-workshop
-certoraRun confs/setup.conf
+certoraSorobanProver confs/setup.conf
 ```
 You should see an output like so:
 
@@ -71,7 +71,7 @@ It will show you that a basic sanity check has passed. You can see the `Source F
 `src/certora/spec.rs` will show you the `sanity` rule we just ran. This rule simply calls `Token::balance()` and checks that the control reaches the `satisfy` statement that follows. You can read more about `satisfy` [here](https://docs.certora.com/en/latest/docs/cvl/statements.html#satisfy).
 
 
-If you are not able to run certoraRun, see the Troubleshooting section at the end of this document.
+If you are not able to run certoraSorobanProver, see the Troubleshooting section at the end of this document.
 
 #### Exercise 1. A property to check the initial balance of a new account.
 
@@ -81,7 +81,7 @@ You can write your property (or rule) in `src/certora/spec.rs` inside the functi
 Once you have written the rule, you can run Certora Sunbeam to check it by running:
 
 ```
-certoraRun confs/exercise1.conf
+certoraSorobanProver confs/exercise1.conf
 ```
 
 <details>
@@ -101,7 +101,7 @@ You can write these two property in `transfer_is_correct` and `transfer_no_effec
 Once you have written the rule, you can run Certora Sunbeam to check it by running:
 
 ```
-certoraRun confs/exercise2.conf
+certoraSorobanProver confs/exercise2.conf
 ```
 
 #### Exercise 3. `transfer` under insufficient funds
@@ -111,7 +111,7 @@ If `from` does not have sufficient balance, `transfer` of funds should not succe
 Once you have written the rule, you can run Certora Sunbeam to check it by running:
 
 ```
-certoraRun confs/exercise3.conf
+certoraSorobanProver confs/exercise3.conf
 ```
 
 #### Exercise 4. Specs for `mint` and `burn`
@@ -139,8 +139,8 @@ This repository has a branch `solutions`. On this branch, in file `solutions/sol
 # Troubleshooting
 
 
-## Unable to run certoraRun
-If you are unable to run `certoraRun`, we recommend trying it from within a `venv`.
+## Unable to run certoraSorobanProver
+If you are unable to run `certoraSorobanProver`, we recommend trying it from within a `venv`.
 
 1. First, create a `venv` and make sure you are inside the `venv` by running the following:
 
@@ -155,20 +155,20 @@ source .venv/bin/activate
 pip3 install -r requirements.txt
 ``` 
 
-3. Finally, try running certoraRun again:
+3. Finally, try running certoraSorobanProver again:
 ```
-certoraRun confs/setup.conf
+certoraSorobanProver confs/setup.conf
 ```
 
-## Build step of certoraRun is failing
+## Build step of certoraSorobanProver is failing
 
-When you execute `certoraRun`, the project is internally build using `cargo build`. This step
-requires a successful build. In case `certoraRun` fails on the build step, first try to compile the project by running
+When you execute `certoraSorobanProver`, the project is internally build using `cargo build`. This step
+requires a successful build. In case `certoraSorobanProver` fails on the build step, first try to compile the project by running
 `cargo build --release --target wasm32-unknown-unknown` and resolve all
 compiler errors that you see.
 
 ## Compiler Error: "error: linking with \`cc\` failed: exit status: 1" on Mac
-If you are running on Mac and the build step of your project or `certoraRun` fails with the warning
+If you are running on Mac and the build step of your project or `certoraSorobanProver` fails with the warning
 ```
 "error: linking with \`cc\` failed: exit status: 1"
 ```
