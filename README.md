@@ -55,8 +55,7 @@ certoraSorobanProver setup.conf
 You should see an output like so:
 
 ```
-INFO: Executing build process...
-Executing:  cargo build --target=wasm32-unknown-unknown --release  --features certora
+INFO: Building from script ../certora_build.py
 
 Connecting to server...
 
